@@ -18,10 +18,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIViewCo
     
     @IBOutlet weak var downButton: UIButton!
     
+    @IBOutlet weak var box1: UIView!
     @IBOutlet weak var box: UIView!
     var animator: UIDynamicAnimator!
+
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
+    
+    var animator1: UIDynamicAnimator!
+    var gravity1: UIGravityBehavior!
+    var collision1: UICollisionBehavior!
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let boxEffectX = UIInterpolatingMotionEffect.init(keyPath: "center.y", type: .TiltAlongVerticalAxis)
@@ -50,6 +56,30 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIViewCo
         rightButton.addTarget(self, action: #selector(moveToRight), forControlEvents: .TouchDown)
     }
 
+    private func setOffscreenPosition() {
+        var center = view.center
+        center.y = -(CGRectGetHeight(box1.frame) / 2.0)
+        box1.center = center
+        animator1.removeAllBehaviors()
+    }
+    
+    @IBAction func letDropDown(sender: AnyObject) {
+                dropDown()
+                self.animator1.addBehavior(self.gravity1)
+                self.animator1.addBehavior(self.collision1)
+    }
+
+    func  dropDown(){
+        self.animator1 = UIDynamicAnimator.init(referenceView: self.view)
+        self.gravity1 = UIGravityBehavior.init(items: [self.box1])
+        let gravityDirection: CGVector = CGVectorMake(0.0, 0.1)
+        self.gravity1.gravityDirection = gravityDirection
+        
+        self.collision1 = UICollisionBehavior.init(items: [self.box1])
+        self.collision1.translatesReferenceBoundsIntoBoundary = true
+        let boundaryInsets = UIEdgeInsets(top: -200.0, left: -20.0, bottom: 255, right: 20.0)
+        collision1.setTranslatesReferenceBoundsIntoBoundaryWithInsets(boundaryInsets)
+    }
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if segue.identifier == "tranistionModal"{
 //            let destinationViewController = segue.destinationViewController as UIViewController

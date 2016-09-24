@@ -58,24 +58,44 @@
                                     <constraint firstAttribute="width" constant="30" id="anW-Tx-kNT"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWf-Em-mdR">
+                                <rect key="frame" x="266" y="285" width="69" height="30"/>
+                                <state key="normal" title="dropdown"/>
+                                <connections>
+                                    <action selector="letDropDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z2M-nN-cs0"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXt-94-PK9">
+                                <rect key="frame" x="490" y="50" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="D7B-Hv-8dp"/>
+                                    <constraint firstAttribute="width" constant="60" id="iXv-b2-FPn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dkI-Ir-qHk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="180" id="AUs-od-rs2"/>
+                            <constraint firstItem="YWf-Em-mdR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FhQ-mP-dX2"/>
                             <constraint firstItem="k5A-tp-kwB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UFr-DN-8Of"/>
+                            <constraint firstItem="YWf-Em-mdR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wai-BO-zLb"/>
                             <constraint firstItem="D0C-Jt-Wuu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="300" id="aYY-ER-82u"/>
                             <constraint firstItem="D0C-Jt-Wuu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="150" id="fVV-Nk-mPT"/>
+                            <constraint firstAttribute="trailing" secondItem="WXt-94-PK9" secondAttribute="trailing" constant="50" id="jyK-3L-0Km"/>
                             <constraint firstItem="gSC-Pe-zJ9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="300" id="nPV-xz-APH"/>
                             <constraint firstItem="gSC-Pe-zJ9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="230" id="nfZ-fN-v4d"/>
                             <constraint firstItem="Xob-86-aEu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="220" id="ocs-x2-xjW"/>
                             <constraint firstItem="dkI-Ir-qHk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="330" id="pRe-dI-LHO"/>
                             <constraint firstItem="k5A-tp-kwB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="46" id="s4g-hT-Vsi"/>
+                            <constraint firstItem="WXt-94-PK9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="sBV-R6-89M"/>
                             <constraint firstItem="Xob-86-aEu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="200" id="wOX-TG-jTi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DTV-7F-cl6"/>
                     <connections>
                         <outlet property="box" destination="k5A-tp-kwB" id="6BB-c7-Yl1"/>
+                        <outlet property="box1" destination="WXt-94-PK9" id="EKM-Bf-GA0"/>
                         <outlet property="downButton" destination="dkI-Ir-qHk" id="aRs-rd-1Eb"/>
                         <outlet property="leftButton" destination="D0C-Jt-Wuu" id="Auk-ro-EoI"/>
                         <outlet property="rightButton" destination="gSC-Pe-zJ9" id="iFE-oo-qeJ"/>
